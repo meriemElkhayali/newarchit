@@ -1,0 +1,593 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+html body * {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.gridywrap div[class*=gridy] {
+  background: #eee;
+  box-shadow: inset 0 0 0 1px #ddd;
+  padding: 15px; float: left;
+  position: relative;
+}
+.gridywrap .gridy-1,
+.gridywrap .gridy-2,
+.gridywrap .gridy-3 {width: 320px;
+  overflow: hidden;}
+
+.gridywrap .gridy-1 {width: 100%;}
+.gridywrap .gridy-2 {width: 100%;}
+.gridywrap .gridy-3 {width: 100%;}
+
+.gridywrap .gridyhe-1 {height: 320px;}
+.gridywrap .gridyhe-2 {height: 320px;}
+
+
+@media screen and (min-width: 640px) {
+  .gridywrap .gridyhe-2 {height: 320px;}
+  .gridywrap {
+    width: 100%;
+  }
+  .gridywrap .gridy-1 {width: 50%;}
+  .gridywrap .gridy-2 {width: 50%;}
+  .gridywrap .gridy-3 {width: 100%;}
+}
+@media screen and (min-width: 1024px) {
+  .gridywrap .gridy-1 {width: 33.3%;}
+  .gridywrap .gridy-2 {width: 66.6%;}
+  .gridywrap .gridy-3 {width: 100%;}
+  .gridywrap .gridyhe-2 {height: 640px;}
+}
+
+/*styling*/
+.gridywrap .gridimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+.gridywrap .gridimg img {
+  width: 100%;
+}
+.gridywrap .gridinfo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+  transition: all 0.8s;
+}
+.gridywrap .gridinfo h3 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 130px 0 20px;
+  position: relative;
+}
+.gridywrap .gridinfo h3:after {
+  content: '';
+  width: 25px;
+  border-top: 4px solid #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.gridywrap .gridinfo .gridmeta {
+  transition-delay: 0.25s;
+}
+.gridywrap .gridinfo .gridmeta p {
+  display: inline-block;
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.gridywrap .gridinfo .gridmeta p i {
+  margin-right: 5px;
+}
+.gridywrap .gridinfo .gridmeta p.gridwho {
+  margin-left: 25px;
+}
+.gridywrap .gridinfo p.gridexerpt {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 22px;
+  margin-bottom: 25px;
+  color: #fff;
+  transition-delay: 0.5s;
+}
+
+.gridywrap .gridinfo * {
+  opacity: 0;
+  transition: all 0.8s;
+}
+.gridywrap .gridinfo h3 {
+  opacity: 1;
+}
+.gridywrap .gridinfo .grid-btn {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 25px;
+  border: 1px solid #fff; 
+  display: block;
+  overflow: hidden;
+}
+.gridywrap .gridinfo .grid-btn:hover {
+  width: 75px;
+  background: rgba(0,0,0,0.3);
+}
+.gridywrap .gridinfo .grid-btn span {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.8s;
+}
+.gridywrap .gridinfo .grid-btn:hover span {
+  opacity: 1;
+  display: inline;
+}
+.gridywrap .gridinfo .grid-btn:hover i {
+  opacity: 0;
+  display: none;
+}
+
+.gridywrap .gridinfo:hover * {
+  opacity: 0.7;
+}
+.gridywrap .gridinfo:hover p {
+  opacity: 1;
+}
+.gridywrap .gridinfo:hover {
+  background: #e42f2f;
+}
+.gridywrap .gridinfo:hover h3 {
+  margin-top: 70px;
+  opacity: 1;
+}
+
+.intro {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: #ddd;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 300;
+  padding: 15px 0;
+}
+.intro p {
+  opacity: 0.5;
+  font-size: 12px;
+}
+.intro p a {
+  color: #FA8CD3;
+}
+/* ImageGallery.css */
+
+/* .Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(63, 35, 35);
+  padding: 0px;
+  outline: none;
+  width: 100%;
+  min-width: 600px;
+
+} */
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #555; /* Couleur des points inactifs */
+  display: inline-block;
+}
+
+.carousel-indicators .active .carousel-dot {
+  background-color: #fff; /* Couleur du point actif */
+}
+
+.carousel-indicators li {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  }
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+15% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-200px);
+    opacity: 0;
+    -webkit-transform: translateX(-200px);
+    -moz-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    -o-transform: translateX(-200px);
+}
+25% {
+  transform: translateX(200px);
+  opacity: 0;
+}
+30% {
+  transform: translateX(0);
+  opacity: 1;
+}
+35%{
+  transform: translateX(0);
+  opacity: 1;
+}
+40% {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+45% {
+  transform: translateX(-200px);
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
+}
+50% {
+  transform: translateX(200px);
+  opacity: 0;
+}
+55% {
+  transform: translateX(0);
+  opacity: 1;
+}
+60% {
+  transform: translateX(0);
+  opacity: 1;
+}
+65% {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+70% {
+  transform: translateX(-200px);
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
+}
+
+
+}
+.pic-ctn {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  align-items: center;
+  border: none;
+/* left: -50%; */
+box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(206, 203, 203, 0.19);
+}
+
+.pic-ctn img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  width: 100%;
+  animation: display 10s infinite;
+  height: 100%;
+  -webkit-animation: display 10s infinite;
+  border: none;
+}
+
+.pic-ctn img:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(5) {
+  animation-delay: 8s;
+}
+
+
+
+
+
+
+
+
+.pic-ctn img:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(5) {
+  animation-delay: 8s;
+}
+
+
+
+
+.pic-ctn img:nth-child(6) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(7) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(8) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(9) {
+  animation-delay: 8s;
+}
+.pic-ctn img:nth-child(10) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(11) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(12) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(13) {
+  animation-delay: 8s;
+}
+.pic-ctn img:nth-child(14) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(15) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(16) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(17) {
+  animation-delay: 8s;
+}
+
+.pic-ctn img:nth-child(18) {
+  animation-delay: 8s;
+}
+.pic-ctn img:nth-child(19) {
+  animation-delay: 2s;
+}
+
+.pic-ctn img:nth-child(20) {
+  animation-delay: 4s;
+}
+
+.pic-ctn img:nth-child(21) {
+  animation-delay: 6s;
+}
+
+.pic-ctn img:nth-child(22) {
+  animation-delay: 8s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@media (max-width: 992px) {
+  .pic-ctn {
+    
+    height: 280px !important;
+    min-width: 280px;
+    align-items: center;
+  } */
+
+
+
+
+@media (max-width: 992px) {
+  .modal-content {
+    min-width: 100%;
+
+  }
+}
+#myModal5 {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  /* background-color: #111; */
+}
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.522) !important;
+  border: none;
+
+ justify-content: center;
+}
+/* .modal-dialog {
+  width:100%;
+  border: none;
+
+}
+.modal-content{
+border: none;
+background-color: rgba(0, 0, 0, 0) !important;
+width:100%;
+
+} */
+/* .modal-header{
+  border: none;
+color: #ffffff;
+text-align: center;
+} */
+.modal-title{
+  text-align: center;
+
+}
+/* .modal-content {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border: none;
+}
+ */
+
+.close{
+  color: #ffffff;
+}
+/* DynamicCarousel.css */
+/* Styles de base pour le carousel */
+/* .dynamic-carousel {
+  width: 80%; 
+  margin: 0 auto;
+}
+
+.pic {
+  height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+} */
+
+/* Styles pour la version tablette */
+/* @media (max-width: 768px) {
+  .dynamic-carousel {
+    width: 90%; 
+  }
+
+  .pic {
+    height: 400px;
+  }
+}
+ */
+
+/* styles.css */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+ 
+}
+#myModal5 {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  /* background-color: #111; */
+}
+/* styles.css */
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:0;
+  padding-left: 6%;
+  width: 100%; /* Add a unit, for example: width: 80%; */
+}
+
+
+
+
+.modal-content {
+  background-color:  rgba(0, 0, 0, 0) !important;
+
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.dynamic-carousel {
+  width: 100%;
+  padding: 0;
+}
+
+.pic {
+  height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* You may need to add styles for your Slider component based on its structure and requirements. */
+
+@media (max-width: 500px) {
+  .pic {
+    height: 300px;
+   
+  }
+}
+/*  */

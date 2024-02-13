@@ -1,0 +1,85 @@
+
+/* body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: #f8f8f8; 
+  } */
+
+.component{
+   
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    width: 100%;
+    margin:0 auto;
+    padding: 3rem;
+  }
+  
+  .component blockquote.quote {
+      position: relative; 
+      text-align: center;
+      padding: 1rem 1rem;
+      width: 50%;  /* create space for the quotes */
+      color: #484748;
+      margin: 1rem auto 2rem;
+  }
+  .component blockquote.EN {
+      background:
+      linear-gradient(to right, #505050 4px, transparent 4px) 0 100%,
+      linear-gradient(to left, #505050 4px, transparent 4px) 100% 0,
+      linear-gradient(to bottom, #505050 4px, transparent 4px) 100% 0,
+      linear-gradient(to top, #505050 4px, transparent 4px) 0 100%;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+  }
+  
+  .component blockquote.DE {
+      background:
+      linear-gradient(to right, #505050 4px, transparent 4px) 0% 0%,
+      linear-gradient(to bottom, #505050 4px, transparent 4px) 0% 0%,
+      linear-gradient(to left, #505050 4px, transparent 4px) 100% 100%,
+      linear-gradient(to top, #505050 4px, transparent 4px) 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+  }
+      
+  
+  /* -- create the quotation marks -- */
+  .component blockquote.quote:before,
+  .component blockquote.quote:after{
+      font-family: FontAwesome;
+      position: absolute;
+      color: #505050;
+      font-size: 30px;
+  }
+  
+  .component blockquote.EN:before{
+      content: "\f10d";
+      top: -12px;
+      margin-right: -20px;
+      right: 100%;
+  }
+  .component blockquote.EN:after{
+      content: "\f10e";
+      left: 98%;  
+      top: auto;
+      bottom: -20px;
+  }
+
+  
+
+  .component img {
+  width: 50%; /* Ajustez la largeur selon vos besoins */
+  display: inline-block;
+  margin-top: 1rem; /* Espace entre les images et le bloc de citation */
+}
+
+/* Media query pour empiler les images sur des écrans plus petits */
+@media (max-width: 600px) {
+  .component img {
+    width: 100%;
+    display: block;
+    margin-top: 1rem; /* Espace entre les images sur des écrans plus petits */
+  }
+}
